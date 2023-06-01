@@ -1,0 +1,4 @@
+.sticky_component{
+    position: sticky;
+    top: 64px;
+}

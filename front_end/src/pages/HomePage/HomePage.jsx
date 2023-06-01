@@ -3,7 +3,7 @@ import PinterestLayout from '../../components/PinterestLayout/PinterestLayout'
 
 const HomePage = () => {
   return (
-    <div className='cointainer mx-0 my-auto'>
+    <div className='container mx-0 my-auto'>
  <PinterestLayout/>
     </div>
    

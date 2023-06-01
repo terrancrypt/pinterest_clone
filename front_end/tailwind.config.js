@@ -4,9 +4,11 @@ module.exports = {
   theme: {
     extend: {
      gridRowEnd:{
+      xs: "span 16",
       sm: "span 26",
       md: "span 36",
       lg: "span 46",
+      xl: "span 50"
      }
     },
   },
