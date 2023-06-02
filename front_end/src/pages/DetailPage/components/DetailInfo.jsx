@@ -5,12 +5,13 @@ import DetaiInfoFooter from "./DetaiInfoFooter";
 
 const DetailInfo = () => {
   return (
-    <div className="w-1/2">
-      <div className="max-h-[917px] flex flex-col px-8 justify-between">
+    <div className="w-1/2 max-h-[917px] flex flex-col">
+      <div className="h-full flex flex-col px-8">
         <DetailInfoHeader />
         <DetailInfoBody />
-        <DetaiInfoFooter />
+       
       </div>
+      <DetaiInfoFooter />
     </div>
   );
 };

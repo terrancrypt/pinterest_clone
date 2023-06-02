@@ -52,7 +52,7 @@ const DetailInfoUtils = () => {
   ];
 
   return (
-    <>
+    <div className="flex">
     {listSocial.map((item, index)=>{
        return  <div className="w-12 h-12 hover:bg-gray-200 rounded-full flex items-center justify-center" key={index}>
         <Dropdown
@@ -69,7 +69,7 @@ const DetailInfoUtils = () => {
         </Dropdown>
       </div>
     })}
-    </>
+    </div>
   );
 };
 

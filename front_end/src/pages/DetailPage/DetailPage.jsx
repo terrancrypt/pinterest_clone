@@ -3,7 +3,7 @@ import DetailInfo from "./components/DetailInfo";
 
 const DetailPage = () => {
   return (
-    <div className="flex justify-center items-center pt-[100px]">
+    <div className="flex justify-center items-center pt-[100px] mb-[500px]">
       <div className="w-[1016px] rounded-[32px] shadow-[rgba(0,0,0,0.1)_0px_1px_20px_0px]">
         <div className="w-full flex">
           <div className="w-1/2">

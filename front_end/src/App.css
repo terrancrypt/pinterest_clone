@@ -1,4 +1,15 @@
-.sticky_component{
-    position: sticky;
-    top: 64px;
+.main_button{
+    min-width: 60px;
+    min-height: 48px;
+    background-color: #e60023;
+    padding: 12px 16px;
+    font-size: medium;
+    font-weight: 600;
+    color: white;
+    border-radius: 24px;
+    transition: transform 85ms ease-out;
+}
+
+.main_button:hover{
+    background-color: #ad081b;
 }
