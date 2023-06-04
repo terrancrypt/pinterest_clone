@@ -11,23 +11,24 @@ const generateToken = (data) => {
 
 // Check Token
 const checkToken = (token) => {
-    return jwt.verify(token, "node31")
+  return jwt.verify(token, "node31");
 };
 
 // Decode Token
-const decodeToken = (token) => {
+const decodeToken = async (token) => {
   return jwt.decode(token);
+   
 };
 
 const verifyJWT = (req, res, next) => {
-    try {
-      const { token } = req.headers;
-      if (checkToken(token)) {
-        next();
-      }
-    } catch (error) {
-      res.status(401).send(error.message)
+  try {
+    const { token } = req.headers;
+    if (checkToken(token)) {
+      next();
     }
+  } catch (error) {
+    res.status(401).send(error.message);
   }
+};
 
 export { generateToken, checkToken, decodeToken, verifyJWT };

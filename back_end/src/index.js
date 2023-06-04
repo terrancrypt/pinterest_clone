@@ -12,6 +12,4 @@ app.use(cors());
 // Router
 app.use("/api", rootRouter);
 
-app.listen(8080, () => {
-  console.log(`Server started on 8080`);
-});
+app.listen(8080);

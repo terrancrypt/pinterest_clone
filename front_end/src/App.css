@@ -13,3 +13,28 @@
 .main_button:hover{
     background-color: #ad081b;
 }
+
+.secondary_button{
+    min-width: 60px;
+    min-height: 48px;
+    background-color: #efefef;
+    padding: 12px 16px;
+    font-size: medium;
+    font-weight: 600;
+    color: black;
+    border-radius: 24px;
+    transition: transform 85ms ease-out;
+}
+
+.secondary_button:hover{
+    background-color: #e2e2e2;
+}
+
+/* Modal */
+.ant-modal .ant-modal-content {
+    border-radius: 32px;
+    box-shadow: rgba(0, 0, 0, 0.45) 0px 2px 10px;
+    text-align: center;
+    min-height: 400px;
+    padding: 30px 10px 24px;
+}

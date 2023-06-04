@@ -3,6 +3,7 @@ import "./App.css";
 import Header from "./components/Header/Header";
 import HomePage from "./pages/HomePage/HomePage";
 import DetailPage from "./pages/DetailPage/DetailPage";
+import UploadPage from "./pages/UploadPage/UploadPage";
 
 function App() {
   return (
@@ -12,6 +13,7 @@ function App() {
       <Routes>
            <Route path="/" element={<HomePage/>}/>
            <Route path="/pin/:id" element={<DetailPage/>}/>
+           <Route path="/upload" element={<UploadPage/>}/>
       </Routes>
       </BrowserRouter>
    
