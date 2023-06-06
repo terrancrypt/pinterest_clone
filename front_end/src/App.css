@@ -38,3 +38,8 @@
     min-height: 400px;
     padding: 30px 10px 24px;
 }
+
+/* Input */
+.ant-input{
+    resize: none!important;
+}
