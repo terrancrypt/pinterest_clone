@@ -28,7 +28,7 @@ const postLogin = async (req, res) => {
         failCode(res, "Incorrect password!");
       }
     } else {
-      res.send("Incorrect email!");
+      failCode(res, "Incorrect email!");
     }
   } catch (error) {
     errorCode(res, "Server error!");
@@ -70,16 +70,23 @@ const postSignUp = async (req, res) => {
 
 const postUpload = async (req, res) => {
   try {
-    const { name, url, desc } = req.body;
+    const { name, description, destination_link } = req.body;
     const { token } = req.headers;
-    const tokenDecode = await decodeToken(token);
+    const {
+      data: { user_id },
+    } = await decodeToken(token);
+
+    const { file } = req;
+
+    const fileUrl = process.cwd() + "/public/img/" + file.filename;
 
     const dataUpload = await prisma.images.create({
       data: {
         name,
-        url,
-        description: desc,
-        user_id: tokenDecode.data.user_id,
+        url: fileUrl,
+        description,
+        destination_link,
+        user_id,
       },
     });
 
@@ -137,6 +144,11 @@ const getUserInfo = async (req, res) => {
       },
     });
 
+    if (!dataUser) {
+      failCode(res, "User does not exist!");
+      return;
+    }
+
     successCode(res, dataUser, "Get user info success!");
   } catch {
     errorCode(res, "Server error!");
@@ -154,6 +166,9 @@ const getSavedImage = async (req, res) => {
       where: {
         user_id,
       },
+      include:{
+        save_images: true,
+      }
     });
 
     successCode(res, dataSavedImage, "Get saved image success!");
@@ -165,6 +180,28 @@ const getSavedImage = async (req, res) => {
 const deleteImage = async (req, res) => {
   try {
     const { imageId } = req.params;
+    const { token } = req.headers;
+    const {
+      data: { user_id },
+    } = await decodeToken(token);
+
+    // Check xem tấm hình có tồn tại hay không
+    const checkImageExist = await prisma.images.findUnique({
+      where: {
+        img_id: Number(imageId),
+      },
+    });
+
+    if (!checkImageExist) {
+      failCode(res, "Image does not exist!");
+      return;
+    }
+
+    // Check xem trong tấm hình user có phải là người đằng hình hay không
+    if (checkImageExist.user_id !== user_id){
+      failCode(res, "You cannot delete another user's picture!");
+      return;
+    }
 
     // Kiểm tra tham chiếu trong bảng comments
     const hasReferencesComment = await prisma.comments.findFirst({
@@ -205,7 +242,8 @@ const deleteImage = async (req, res) => {
     });
 
     successCode(res, "Delete image successfully!");
-  } catch {
+  } catch (err) {
+    console.log(err);
     errorCode(res, "Server error!");
   }
 };

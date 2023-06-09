@@ -45,6 +45,11 @@ const getDetailImage = async (req, res) => {
       },
     });
 
+    if(!dataImage){
+      failCode(res, "Image does not exist!");
+      return;
+    }
+
     successCode(res, dataImage, "Success!");
   } catch (error) {
     errorCode(res, "Server error!");

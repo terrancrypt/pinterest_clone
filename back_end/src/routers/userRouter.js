@@ -10,6 +10,7 @@ import {
   saveImage,
 } from "../controllers/userController.js";
 import { verifyJWT } from "../auth/jwt.js";
+import upload from "../controllers/uploadController.js";
 
 const userRouter = express.Router();
 
@@ -22,9 +23,9 @@ userRouter.get("/get-info/:userId", verifyJWT, getUserInfo);
 userRouter.put("/update-info", verifyJWT, putUpdateInfo);
 
 // Image Mangement
-userRouter.post("/upload", verifyJWT, postUpload);
+userRouter.post("/upload", verifyJWT, upload.single("file"), postUpload);
 userRouter.post("/save-image/:imageId", verifyJWT, saveImage);
 userRouter.get("/get-saved-image/", verifyJWT, getSavedImage);
-userRouter.delete("/delete-image/:imageId", verifyJWT, deleteImage)
+userRouter.delete("/delete-image/:imageId", verifyJWT, deleteImage);
 
 export default userRouter;
