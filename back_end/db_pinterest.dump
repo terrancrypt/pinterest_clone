@@ -1,0 +1,149 @@
+-- MySQL dump 10.13  Distrib 8.0.18, for Win64 (x86_64)
+--
+-- Host: localhost    Database: db_pinterest
+-- ------------------------------------------------------
+-- Server version	8.0.33
+
+/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
+/*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
+/*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
+/*!50503 SET NAMES utf8mb4 */;
+/*!40103 SET @OLD_TIME_ZONE=@@TIME_ZONE */;
+/*!40103 SET TIME_ZONE='+00:00' */;
+/*!40014 SET @OLD_UNIQUE_CHECKS=@@UNIQUE_CHECKS, UNIQUE_CHECKS=0 */;
+/*!40014 SET @OLD_FOREIGN_KEY_CHECKS=@@FOREIGN_KEY_CHECKS, FOREIGN_KEY_CHECKS=0 */;
+/*!40101 SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='NO_AUTO_VALUE_ON_ZERO' */;
+/*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
+
+--
+-- Table structure for table `comments`
+--
+
+DROP TABLE IF EXISTS `comments`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!50503 SET character_set_client = utf8mb4 */;
+CREATE TABLE `comments` (
+  `comment_id` int NOT NULL AUTO_INCREMENT,
+  `user_id` int NOT NULL,
+  `img_id` int NOT NULL,
+  `content` varchar(1000) NOT NULL,
+  `cmt_date` datetime NOT NULL,
+  PRIMARY KEY (`comment_id`),
+  KEY `user_id` (`user_id`),
+  KEY `img_id` (`img_id`),
+  CONSTRAINT `comments_ibfk_1` FOREIGN KEY (`user_id`) REFERENCES `users` (`user_id`),
+  CONSTRAINT `comments_ibfk_2` FOREIGN KEY (`img_id`) REFERENCES `images` (`img_id`)
+) ENGINE=InnoDB AUTO_INCREMENT=18 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `comments`
+--
+
+LOCK TABLES `comments` WRITE;
+/*!40000 ALTER TABLE `comments` DISABLE KEYS */;
+INSERT INTO `comments` VALUES (11,10,62,'They belong to the Equidae family and are known for their agility, speed, and strong social bonds.','2023-06-09 13:22:50'),(12,10,58,'They belong to the Equidae family and are known for their agility, speed, and strong social bonds.','2023-06-09 13:23:02'),(13,10,60,'Lions are primarily found in sub-Saharan Africa, although a small population exists in the Gir Forest of India.','2023-06-09 13:23:50'),(15,11,54,'Dogs have been selectively bred over thousands of years for various purposes, such as hunting, herding, guarding, and companionship. ','2023-06-09 13:26:48'),(17,15,54,'Chó pug là một động vật rất thân thiện','2023-06-09 14:19:58');
+/*!40000 ALTER TABLE `comments` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `images`
+--
+
+DROP TABLE IF EXISTS `images`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!50503 SET character_set_client = utf8mb4 */;
+CREATE TABLE `images` (
+  `img_id` int NOT NULL AUTO_INCREMENT,
+  `name` varchar(255) NOT NULL,
+  `url` varchar(255) NOT NULL,
+  `description` varchar(255) DEFAULT NULL,
+  `user_id` int NOT NULL,
+  `destination_link` varchar(255) DEFAULT NULL,
+  PRIMARY KEY (`img_id`),
+  KEY `user_id` (`user_id`),
+  CONSTRAINT `images_ibfk_1` FOREIGN KEY (`user_id`) REFERENCES `users` (`user_id`)
+) ENGINE=InnoDB AUTO_INCREMENT=64 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `images`
+--
+
+LOCK TABLES `images` WRITE;
+/*!40000 ALTER TABLE `images` DISABLE KEYS */;
+INSERT INTO `images` VALUES (54,'Pug Dog','D:\\WorkSpace\\pinterest_clone\\back_end/public/img/1686315900508_pug_dog.jpeg','Dogs are domesticated mammals and are widely considered to be man\'s best friend. They belong to the Canidae family, which also includes wolves, foxes, and other similar species.',10,'https://en.wikipedia.org/wiki/Pug'),(55,'Panda Bear','D:\\WorkSpace\\pinterest_clone\\back_end/public/img/1686315963653_panda_bear.jpeg','The panda bear, also known simply as the panda, is a beloved and iconic animal native to the mountainous regions of China. ',10,'https://en.wikipedia.org/wiki/Giant_panda'),(56,'Frog','D:\\WorkSpace\\pinterest_clone\\back_end/public/img/1686316123350_frog.jpeg','Frogs are amphibians that belong to the order Anura, which means \"without a tail.\" They are known for their unique life cycle, starting as aquatic larvae (tadpoles) and later transforming into terrestrial adults.',11,'https://en.wikipedia.org/wiki/Frog'),(57,'Monkey','D:\\WorkSpace\\pinterest_clone\\back_end/public/img/1686316205326_monkey.jpeg','Monkeys are highly intelligent and agile mammals that belong to the primate family.\n',11,'https://en.wikipedia.org/wiki/Monkey'),(58,'Chicken','D:\\WorkSpace\\pinterest_clone\\back_end/public/img/1686316266739_chicken.jpeg','Chickens are domesticated birds that are widely raised for their meat and eggs.',11,'https://en.wikipedia.org/wiki/Chicken'),(59,'Chicken','D:\\WorkSpace\\pinterest_clone\\back_end/public/img/1686316313525_chicken.jpeg','Chickens are domesticated birds that are widely raised for their meat and eggs.',12,'https://en.wikipedia.org/wiki/Chicken'),(60,'Lion','D:\\WorkSpace\\pinterest_clone\\back_end/public/img/1686316407182_lion.jpeg','Lions are large, majestic mammals that belong to the Felidae family. They are known as the \"king of the jungle\" due to their powerful presence and status as apex predators.',12,'https://en.wikipedia.org/wiki/Lion'),(61,'Elephant','D:\\WorkSpace\\pinterest_clone\\back_end/public/img/1686316446041_elephant.jpeg','Elephants are magnificent and highly intelligent mammals known for their large size and distinct features.',12,'https://en.wikipedia.org/wiki/Elephant'),(62,'Horse','D:\\WorkSpace\\pinterest_clone\\back_end/public/img/1686316484688_horse.jpeg','Horses are majestic and powerful mammals that have been domesticated for thousands of years.',12,'https://en.wikipedia.org/wiki/Horse');
+/*!40000 ALTER TABLE `images` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `save_images`
+--
+
+DROP TABLE IF EXISTS `save_images`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!50503 SET character_set_client = utf8mb4 */;
+CREATE TABLE `save_images` (
+  `img_id` int NOT NULL,
+  `user_id` int NOT NULL,
+  `saved_date` datetime NOT NULL,
+  PRIMARY KEY (`img_id`),
+  KEY `user_id` (`user_id`),
+  CONSTRAINT `save_images_ibfk_1` FOREIGN KEY (`img_id`) REFERENCES `images` (`img_id`),
+  CONSTRAINT `save_images_ibfk_2` FOREIGN KEY (`user_id`) REFERENCES `users` (`user_id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `save_images`
+--
+
+LOCK TABLES `save_images` WRITE;
+/*!40000 ALTER TABLE `save_images` DISABLE KEYS */;
+INSERT INTO `save_images` VALUES (54,15,'2023-06-09 14:18:52'),(55,10,'2023-06-09 13:21:30'),(57,12,'2023-06-09 13:19:21'),(58,10,'2023-06-09 13:21:06'),(59,12,'2023-06-09 13:19:27'),(61,10,'2023-06-09 13:21:22'),(62,10,'2023-06-09 13:20:34');
+/*!40000 ALTER TABLE `save_images` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `users`
+--
+
+DROP TABLE IF EXISTS `users`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!50503 SET character_set_client = utf8mb4 */;
+CREATE TABLE `users` (
+  `user_id` int NOT NULL AUTO_INCREMENT,
+  `full_name` varchar(255) NOT NULL,
+  `email` varchar(150) NOT NULL,
+  `pass_word` varchar(150) NOT NULL,
+  `age` int DEFAULT NULL,
+  `avatar` varchar(255) DEFAULT NULL,
+  PRIMARY KEY (`user_id`),
+  UNIQUE KEY `email` (`email`)
+) ENGINE=InnoDB AUTO_INCREMENT=16 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `users`
+--
+
+LOCK TABLES `users` WRITE;
+/*!40000 ALTER TABLE `users` DISABLE KEYS */;
+INSERT INTO `users` VALUES (10,'Andrew Tate','andrewtate@gmail.com','$2b$10$4Y6Rp2jcdGu4RyuruMDsiuPPGcfayG34IfI5MO/GS5gOYWnr7Lt42',18,NULL),(11,'Mark Johnson','markjohnson@gmail.com','$2b$10$U.bS4KgkdyKLf3ptvku05.9Sdp04zAlU8oUJKEKx2u79xxmhtxWKW',19,NULL),(12,'Kimmie Haland','KimieHalandn@gmail.com','$2b$10$m2DmKrWK7DfbofivHsollOUmhxsQwCGnZ78dFcGIhMexf.ouZ7UiO',21,NULL),(15,'Tường','tuong@gmail.com','$2b$10$jLXuGmPOZ.EvrST.Neo8Pe/RtaxWr96YadwlFjhoF12bEh0KRgKHa',23,'https://nguoinoitieng.tv/images/nnt/103/0/bhhi.jpg');
+/*!40000 ALTER TABLE `users` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Dumping routines for database 'db_pinterest'
+--
+/*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
+
+/*!40101 SET SQL_MODE=@OLD_SQL_MODE */;
+/*!40014 SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS */;
+/*!40014 SET UNIQUE_CHECKS=@OLD_UNIQUE_CHECKS */;
+/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
+/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
+/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
+/*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
+
+-- Dump completed on 2023-06-09 21:32:20

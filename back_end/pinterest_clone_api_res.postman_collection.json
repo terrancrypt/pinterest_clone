@@ -1,0 +1,365 @@
+{
+	"info": {
+		"_postman_id": "1f267502-5b82-4b50-b177-3eb4d4557eaa",
+		"name": "pinterest_clone_api_res",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json",
+		"_exporter_id": "27175588"
+	},
+	"item": [
+		{
+			"name": "Trang chủ",
+			"item": [
+				{
+					"name": "GET danh sách ảnh về",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJkYXRhIjp7InVzZXJfaWQiOjE1LCJmdWxsX25hbWUiOiJOZ-G7jWMgVMaw4budbmciLCJlbWFpbCI6Im5nb2N0dW9uZ0BnbWFpbC5jb20iLCJwYXNzX3dvcmQiOiIkMmIkMTAkVkVPSTMvOWNuL2c3dUI4QnRtNnFOdWhQWE5qQlU0aHhubS5BT2ozeC5YbTh1OVdSUkFPejIiLCJhZ2UiOjIzLCJhdmF0YXIiOm51bGx9LCJpYXQiOjE2ODYzMjAwMTksImV4cCI6MTY4NjQwNjQxOX0.ME9z0VMW9yJGjHtyyN5ivIeo314uukw0bqlzHLMiLLA",
+								"type": "text"
+							}
+						],
+						"url": "{{domain}}/api/image/get-all"
+					},
+					"response": []
+				},
+				{
+					"name": "GET tìm kiếm danh sách ảnh theo tên",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJkYXRhIjp7InVzZXJfaWQiOjE1LCJmdWxsX25hbWUiOiJOZ-G7jWMgVMaw4budbmciLCJlbWFpbCI6Im5nb2N0dW9uZ0BnbWFpbC5jb20iLCJwYXNzX3dvcmQiOiIkMmIkMTAkVkVPSTMvOWNuL2c3dUI4QnRtNnFOdWhQWE5qQlU0aHhubS5BT2ozeC5YbTh1OVdSUkFPejIiLCJhZ2UiOjIzLCJhdmF0YXIiOm51bGx9LCJpYXQiOjE2ODYzMjAwMTksImV4cCI6MTY4NjQwNjQxOX0.ME9z0VMW9yJGjHtyyN5ivIeo314uukw0bqlzHLMiLLA",
+								"type": "text"
+							}
+						],
+						"url": "{{domain}}/api/image/search/lion"
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Trang chi tiết",
+			"item": [
+				{
+					"name": "GET thông tin ảnh và người tạo ảnh bằng id ảnh",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJkYXRhIjp7InVzZXJfaWQiOjE1LCJmdWxsX25hbWUiOiJOZ-G7jWMgVMaw4budbmciLCJlbWFpbCI6Im5nb2N0dW9uZ0BnbWFpbC5jb20iLCJwYXNzX3dvcmQiOiIkMmIkMTAkVkVPSTMvOWNuL2c3dUI4QnRtNnFOdWhQWE5qQlU0aHhubS5BT2ozeC5YbTh1OVdSUkFPejIiLCJhZ2UiOjIzLCJhdmF0YXIiOm51bGx9LCJpYXQiOjE2ODYzMjAwMTksImV4cCI6MTY4NjQwNjQxOX0.ME9z0VMW9yJGjHtyyN5ivIeo314uukw0bqlzHLMiLLA",
+								"type": "text"
+							}
+						],
+						"url": "{{domain}}/api/image/get-detail-image/58"
+					},
+					"response": []
+				},
+				{
+					"name": "GET thông tin bình luận theo id ảnh",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJkYXRhIjp7InVzZXJfaWQiOjE1LCJmdWxsX25hbWUiOiJOZ-G7jWMgVMaw4budbmciLCJlbWFpbCI6Im5nb2N0dW9uZ0BnbWFpbC5jb20iLCJwYXNzX3dvcmQiOiIkMmIkMTAkVkVPSTMvOWNuL2c3dUI4QnRtNnFOdWhQWE5qQlU0aHhubS5BT2ozeC5YbTh1OVdSUkFPejIiLCJhZ2UiOjIzLCJhdmF0YXIiOm51bGx9LCJpYXQiOjE2ODYzMjAwMTksImV4cCI6MTY4NjQwNjQxOX0.ME9z0VMW9yJGjHtyyN5ivIeo314uukw0bqlzHLMiLLA",
+								"type": "text"
+							}
+						],
+						"url": "{{domain}}/api/image/get-comment/62"
+					},
+					"response": []
+				},
+				{
+					"name": "GET thông tin đã lưu hình này hay chưa theo id ảnh",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJkYXRhIjp7InVzZXJfaWQiOjE1LCJmdWxsX25hbWUiOiJOZ-G7jWMgVMaw4budbmciLCJlbWFpbCI6Im5nb2N0dW9uZ0BnbWFpbC5jb20iLCJwYXNzX3dvcmQiOiIkMmIkMTAkVkVPSTMvOWNuL2c3dUI4QnRtNnFOdWhQWE5qQlU0aHhubS5BT2ozeC5YbTh1OVdSUkFPejIiLCJhZ2UiOjIzLCJhdmF0YXIiOm51bGx9LCJpYXQiOjE2ODYzMjAwMTksImV4cCI6MTY4NjQwNjQxOX0.ME9z0VMW9yJGjHtyyN5ivIeo314uukw0bqlzHLMiLLA",
+								"type": "text"
+							}
+						],
+						"url": "{{domain}}/api/image/get-save/56"
+					},
+					"response": []
+				},
+				{
+					"name": "POST để lưu thông tin bình luận của người dùng với hình ảnh",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJkYXRhIjp7InVzZXJfaWQiOjE1LCJmdWxsX25hbWUiOiJOZ-G7jWMgVMaw4budbmciLCJlbWFpbCI6Im5nb2N0dW9uZ0BnbWFpbC5jb20iLCJwYXNzX3dvcmQiOiIkMmIkMTAkVkVPSTMvOWNuL2c3dUI4QnRtNnFOdWhQWE5qQlU0aHhubS5BT2ozeC5YbTh1OVdSUkFPejIiLCJhZ2UiOjIzLCJhdmF0YXIiOm51bGx9LCJpYXQiOjE2ODYzMjAwMTksImV4cCI6MTY4NjQwNjQxOX0.ME9z0VMW9yJGjHtyyN5ivIeo314uukw0bqlzHLMiLLA",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"comment\": \"Chó pug là một động vật rất thân thiện\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "{{domain}}/api/image/add-comment/54"
+					},
+					"response": []
+				},
+				{
+					"name": "POST lưu hình ảnh",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJkYXRhIjp7InVzZXJfaWQiOjE1LCJmdWxsX25hbWUiOiJOZ-G7jWMgVMaw4budbmciLCJlbWFpbCI6Im5nb2N0dW9uZ0BnbWFpbC5jb20iLCJwYXNzX3dvcmQiOiIkMmIkMTAkVkVPSTMvOWNuL2c3dUI4QnRtNnFOdWhQWE5qQlU0aHhubS5BT2ozeC5YbTh1OVdSUkFPejIiLCJhZ2UiOjIzLCJhdmF0YXIiOm51bGx9LCJpYXQiOjE2ODYzMjAwMTksImV4cCI6MTY4NjQwNjQxOX0.ME9z0VMW9yJGjHtyyN5ivIeo314uukw0bqlzHLMiLLA",
+								"type": "text"
+							}
+						],
+						"url": "{{domain}}/api/user/save-image/54"
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Trang quản lý ảnh",
+			"item": [
+				{
+					"name": "GET thông tin user",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJkYXRhIjp7InVzZXJfaWQiOjE1LCJmdWxsX25hbWUiOiJOZ-G7jWMgVMaw4budbmciLCJlbWFpbCI6Im5nb2N0dW9uZ0BnbWFpbC5jb20iLCJwYXNzX3dvcmQiOiIkMmIkMTAkVkVPSTMvOWNuL2c3dUI4QnRtNnFOdWhQWE5qQlU0aHhubS5BT2ozeC5YbTh1OVdSUkFPejIiLCJhZ2UiOjIzLCJhdmF0YXIiOm51bGx9LCJpYXQiOjE2ODYzMjAwMTksImV4cCI6MTY4NjQwNjQxOX0.ME9z0VMW9yJGjHtyyN5ivIeo314uukw0bqlzHLMiLLA",
+								"type": "text"
+							}
+						],
+						"url": "{{domain}}/api/user/get-info/10"
+					},
+					"response": []
+				},
+				{
+					"name": "GET danh sách ảnh đã lưu theo user id",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJkYXRhIjp7InVzZXJfaWQiOjE1LCJmdWxsX25hbWUiOiJOZ-G7jWMgVMaw4budbmciLCJlbWFpbCI6Im5nb2N0dW9uZ0BnbWFpbC5jb20iLCJwYXNzX3dvcmQiOiIkMmIkMTAkVkVPSTMvOWNuL2c3dUI4QnRtNnFOdWhQWE5qQlU0aHhubS5BT2ozeC5YbTh1OVdSUkFPejIiLCJhZ2UiOjIzLCJhdmF0YXIiOm51bGx9LCJpYXQiOjE2ODYzMjAwMTksImV4cCI6MTY4NjQwNjQxOX0.ME9z0VMW9yJGjHtyyN5ivIeo314uukw0bqlzHLMiLLA",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "{{domain}}/api/user/get-saved-image"
+					},
+					"response": []
+				},
+				{
+					"name": "GET danh sách ảnh đã tạo theo user id",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJkYXRhIjp7InVzZXJfaWQiOjE1LCJmdWxsX25hbWUiOiJOZ-G7jWMgVMaw4budbmciLCJlbWFpbCI6Im5nb2N0dW9uZ0BnbWFpbC5jb20iLCJwYXNzX3dvcmQiOiIkMmIkMTAkVkVPSTMvOWNuL2c3dUI4QnRtNnFOdWhQWE5qQlU0aHhubS5BT2ozeC5YbTh1OVdSUkFPejIiLCJhZ2UiOjIzLCJhdmF0YXIiOm51bGx9LCJpYXQiOjE2ODYzMjAwMTksImV4cCI6MTY4NjQwNjQxOX0.ME9z0VMW9yJGjHtyyN5ivIeo314uukw0bqlzHLMiLLA",
+								"type": "text"
+							}
+						],
+						"url": "{{domain}}/api/image/get-image-by-user/10"
+					},
+					"response": []
+				},
+				{
+					"name": "DELETE xóa ảnh theo id ảnh",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJkYXRhIjp7InVzZXJfaWQiOjE1LCJmdWxsX25hbWUiOiJOZ-G7jWMgVMaw4budbmciLCJlbWFpbCI6Im5nb2N0dW9uZ0BnbWFpbC5jb20iLCJwYXNzX3dvcmQiOiIkMmIkMTAkVkVPSTMvOWNuL2c3dUI4QnRtNnFOdWhQWE5qQlU0aHhubS5BT2ozeC5YbTh1OVdSUkFPejIiLCJhZ2UiOjIzLCJhdmF0YXIiOm51bGx9LCJpYXQiOjE2ODYzMjAwMTksImV4cCI6MTY4NjQwNjQxOX0.ME9z0VMW9yJGjHtyyN5ivIeo314uukw0bqlzHLMiLLA",
+								"type": "text"
+							}
+						],
+						"url": "{{domain}}/api/user/delete-image/63"
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Trang thêm ảnh",
+			"item": [
+				{
+					"name": "POST thêm một ảnh của user",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJkYXRhIjp7InVzZXJfaWQiOjE1LCJmdWxsX25hbWUiOiJOZ-G7jWMgVMaw4budbmciLCJlbWFpbCI6Im5nb2N0dW9uZ0BnbWFpbC5jb20iLCJwYXNzX3dvcmQiOiIkMmIkMTAkVkVPSTMvOWNuL2c3dUI4QnRtNnFOdWhQWE5qQlU0aHhubS5BT2ozeC5YbTh1OVdSUkFPejIiLCJhZ2UiOjIzLCJhdmF0YXIiOm51bGx9LCJpYXQiOjE2ODYzMjAwMTksImV4cCI6MTY4NjQwNjQxOX0.ME9z0VMW9yJGjHtyyN5ivIeo314uukw0bqlzHLMiLLA",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "file",
+									"type": "file",
+									"src": "/C:/Users/Lenovo/Pictures/fox.jpeg"
+								},
+								{
+									"key": "name",
+									"value": "Fox",
+									"type": "text"
+								},
+								{
+									"key": "description",
+									"value": "They have a wide distribution across the globe, inhabiting various habitats such as forests, grasslands, deserts, and even urban areas.",
+									"type": "text"
+								},
+								{
+									"key": "destination_link",
+									"value": "https://en.wikipedia.org/wiki/Fox",
+									"type": "text"
+								}
+							]
+						},
+						"url": "{{domain}}/api/user/upload"
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Chỉnh sửa thông tin cá nhân",
+			"item": [
+				{
+					"name": "Update User Info",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJkYXRhIjp7InVzZXJfaWQiOjE1LCJmdWxsX25hbWUiOiJOZ-G7jWMgVMaw4budbmciLCJlbWFpbCI6Im5nb2N0dW9uZ0BnbWFpbC5jb20iLCJwYXNzX3dvcmQiOiIkMmIkMTAkVkVPSTMvOWNuL2c3dUI4QnRtNnFOdWhQWE5qQlU0aHhubS5BT2ozeC5YbTh1OVdSUkFPejIiLCJhZ2UiOjIzLCJhdmF0YXIiOm51bGx9LCJpYXQiOjE2ODYzMjAwMTksImV4cCI6MTY4NjQwNjQxOX0.ME9z0VMW9yJGjHtyyN5ivIeo314uukw0bqlzHLMiLLA",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n \"fullName\": \"Tường\",\r\n \"email\" : \"tuong@gmail.com\",\r\n \"passWord\": \"tuong123\",\r\n \"age\": 23,\r\n \"avatarUrl\": \"https://nguoinoitieng.tv/images/nnt/103/0/bhhi.jpg\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{domain}}/api/user/update-info",
+							"host": [
+								"{{domain}}"
+							],
+							"path": [
+								"api",
+								"user",
+								"update-info"
+							],
+							"query": [
+								{
+									"key": "",
+									"value": "",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "POST trang đăng ký",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n \"fullName\": \"Ngọc Tường\",\r\n \"email\" : \"ngoctuong@gmail.com\",\r\n \"passWord\": \"cyber123\",\r\n \"age\": 23\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "{{domain}}/api/user/signup"
+			},
+			"response": []
+		},
+		{
+			"name": "POST trang đăng nhập",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"email\": \"ngoctuong@gmail.com\",\r\n    \"passWord\": \"cyber123\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "{{domain}}/api/user/login"
+			},
+			"response": []
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "domain",
+			"value": "http://localhost:8080",
+			"type": "string"
+		}
+	]
+}
